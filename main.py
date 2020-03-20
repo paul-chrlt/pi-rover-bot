@@ -14,6 +14,9 @@ p.start(2.5) # Initialization
 
 print("init ok")
 
+gpiofunction = GPIO.gpio_function(servoPIN)
+print(gpiofunction)
+
 try:
   while True:
     p.ChangeDutyCycle(5)
