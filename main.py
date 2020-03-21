@@ -22,17 +22,24 @@ gpiofunction = GPIO.gpio_function(servoPIN)
 print(gpiofunction)
 p.ChangeDutyCycle(0)
 
+def takePicture(fileName):
+    camera.start_preview()
+    time.sleep(2)
+    camera.capture(fileName)
+    camera.stop_preview()
+
+def getToAngle(angle):
+    angle = int(angle)
+    angle = (angle/180)*8+2
+    p.ChangeDutyCycle(angle)
+    time.sleep(1)
+    p.ChangeDutyCycle(0)
+
 try:
   while True:
-      dutyCycle = input("duty cycle ? From 2(0) to 10(180)")
-      dutyCycle = int(dutyCycle)
-      p.ChangeDutyCycle(dutyCycle)
-      time.sleep(1)
-      p.ChangeDutyCycle(0)
-      camera.start_preview()
-      time.sleep(2)
-      camera.capture('./pictures/image.jpg')
-      camera.stop_preview()
+      desiredAngle = input("Angle ? From 0 to 180")
+      getToAngle(desiredAngle)
+      takePicture('./pictures')
 except KeyboardInterrupt:
   p.stop()
   GPIO.cleanup()
