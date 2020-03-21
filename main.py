@@ -1,7 +1,11 @@
 import RPi.GPIO as GPIO
+from picamera import PiCamera
 import time
 
 print("import ok")
+
+camera = PiCamera()
+camera.rotation = 180
 
 servoPIN = 17
 GPIO.setmode(GPIO.BCM)
@@ -25,6 +29,10 @@ try:
       p.ChangeDutyCycle(dutyCycle)
       time.sleep(1)
       p.ChangeDutyCycle(0)
+      camera.start_preview()
+      time.sleep(2)
+      camera.capture('./pictures/image.jpg')
+      camera.stop_preview()
 except KeyboardInterrupt:
   p.stop()
   GPIO.cleanup()
