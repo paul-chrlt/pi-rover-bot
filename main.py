@@ -20,6 +20,7 @@ print(gpiofunction)
 try:
   while True:
       dutyCycle = input("duty cycle ?")
+      dutyCycle = int(dutyCycle)
       p.ChangeDutyCycle(dutyCycle)
       time.sleep(0.5)
 except KeyboardInterrupt:
