@@ -20,7 +20,7 @@ p.ChangeDutyCycle(0)
 
 try:
   while True:
-      dutyCycle = input("duty cycle ?")
+      dutyCycle = input("duty cycle ? From 2(0) to 10(180)")
       dutyCycle = int(dutyCycle)
       p.ChangeDutyCycle(dutyCycle)
       time.sleep(1)
