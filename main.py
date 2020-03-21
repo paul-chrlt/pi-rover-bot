@@ -23,6 +23,7 @@ try:
     time.sleep(0.5)
     p.ChangeDutyCycle(7.5)
     print("in cycle")
+    print(GPIO.gpio_function(servoPIN))
     time.sleep(0.5)
     p.ChangeDutyCycle(10)
     time.sleep(0.5)
