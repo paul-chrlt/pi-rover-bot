@@ -23,7 +23,7 @@ try:
       dutyCycle = input("duty cycle ?")
       dutyCycle = int(dutyCycle)
       p.ChangeDutyCycle(dutyCycle)
-      time.sleep(0.5)
+      time.sleep(1)
       p.ChangeDutyCycle(0)
 except KeyboardInterrupt:
   p.stop()
