@@ -39,7 +39,7 @@ try:
   while True:
       desiredAngle = input("Angle ? From 0 to 180")
       getToAngle(desiredAngle)
-      takePicture('./pictures')
+      takePicture('./pictures/image.jpg')
 except KeyboardInterrupt:
   p.stop()
   GPIO.cleanup()
