@@ -23,8 +23,8 @@ try:
       dutyCycle = input("duty cycle ?")
       dutyCycle = int(dutyCycle)
       p.ChangeDutyCycle(dutyCycle)
-      p.ChangeDutyCycle(0)
       time.sleep(0.5)
+      p.ChangeDutyCycle(0)
 except KeyboardInterrupt:
   p.stop()
   GPIO.cleanup()
