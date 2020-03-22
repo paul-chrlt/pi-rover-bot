@@ -118,7 +118,7 @@ def moveTo(distance):
 #        steps = raw_input("How many steps forward? ")
 #        forward(int(delay) / 1000.0, int(steps))
 #        steps = raw_input("How many steps backwards? ")
-#        backwards(int(delay) / 1000.0, int(steps))    
+#        backwards(int(delay) / 1000.0, int(steps))
 
 try:
   while True:
