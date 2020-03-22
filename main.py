@@ -43,14 +43,10 @@ Seq[5] = [1,0,1,0]
 Seq[6] = [0,0,1,0]
 Seq[7] = [0,1,1,0]
 
-#enable_pin.value = True
-#GPIO.setup(enable_pin, GPIO.OUT)
 GPIO.setup(coil_A_1_pin, GPIO.OUT)
 GPIO.setup(coil_A_2_pin, GPIO.OUT)
 GPIO.setup(coil_B_1_pin, GPIO.OUT)
 GPIO.setup(coil_B_2_pin, GPIO.OUT)
- 
-#GPIO.output(enable_pin, 1)
 
 print("setup ok")
 
@@ -105,25 +101,34 @@ def backwards(delay, steps):
             setStep(Seq[j][0], Seq[j][1], Seq[j][2], Seq[j][3])
             time.sleep(delay)
 
-#def moveTo(distance):
+def moveTo(distance):
+    delay = 10
+    steps = distance
+    if steps > 0:
+        forward(int(delay) / 1000.0, int(steps))
+    else:
+        backwards(int(delay) / 1000.0, int(steps))
+    setStep(0,0,0,0)
 
 # debug stepmotor function
 
-if __name__ == '__main__':
-    while True:
-        delay = raw_input("Time Delay (ms)?")
-        steps = raw_input("How many steps forward? ")
-        forward(int(delay) / 1000.0, int(steps))
-        steps = raw_input("How many steps backwards? ")
-        backwards(int(delay) / 1000.0, int(steps))    
+#if __name__ == '__main__':
+#    while True:
+#        delay = raw_input("Time Delay (ms)?")
+#        steps = raw_input("How many steps forward? ")
+#        forward(int(delay) / 1000.0, int(steps))
+#        steps = raw_input("How many steps backwards? ")
+#        backwards(int(delay) / 1000.0, int(steps))    
 
-#try:
-#  while True:
-#      desiredCamAngle = input("Angle cam ? From 0 to 180")
-#      getToAngle(desiredCamAngle)
-#      takePicture('./pictures/image.jpg')
-#      desiredDirection = input("Direction ? From -90 to 90")
-#      getToDirection(desiredDirection)
-#except KeyboardInterrupt:
-#  pcam.stop()
-#  GPIO.cleanup()
+try:
+  while True:
+      desiredCamAngle = input("Angle cam ? From 0 to 180")
+      getToAngle(desiredCamAngle)
+      takePicture('./pictures/image.jpg')
+      desiredDirection = input("Direction ? From -90 to 90")
+      getToDirection(desiredDirection)
+      desiredMove = input("Move distance ? From -20 to 100")
+      moveTo(desiredMove)
+except KeyboardInterrupt:
+  pcam.stop()
+  GPIO.cleanup()
