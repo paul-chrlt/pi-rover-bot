@@ -42,7 +42,8 @@ Seq[4] = [1,0,0,0]
 Seq[5] = [1,0,1,0]
 Seq[6] = [0,0,1,0]
 Seq[7] = [0,1,1,0]
- 
+
+enable_pin.value = True
 GPIO.setup(enable_pin, GPIO.OUT)
 GPIO.setup(coil_A_1_pin, GPIO.OUT)
 GPIO.setup(coil_A_2_pin, GPIO.OUT)
