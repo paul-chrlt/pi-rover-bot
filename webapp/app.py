@@ -10,6 +10,8 @@ app.secret_key = 'uieorwhcjdqwouiersdhdfsjk'
 def controlRequest():
     if request.method == 'POST':
         camangle = request.form['camangle']
+        getToAngle(camangle)
+        takePicture('./static/currentView.jpg')
         wheelangle = request.form['wheelangle']
         move = request.form['move']
         message = "angle caméra de " + camangle
