@@ -2,10 +2,10 @@
 <body>
     <h1>Mini Cam Rover</h1>
     <img src="{{ currentViewPlace }}" style="max-width: 360px;">
-    <p>tableau de contrôle du module d'exploration</p>
+    <p style="max-width:400px;">Insérer les instructions et valider. Délai de quelques secondes pour la mise à jour.</p>
     <form action="" method="post" style="max-width: 400px;">
         <label>angle caméra</label>
-        <input id="camangle" name="camangle" placeholder = "angle caméra" type = "text"></input>
+        <input id="camangle" name="camangle" placeholder = "angle caméra (0-180)" type = "text"></input>
         <br/>
         <label>angle roues</label>
         <input id="wheelangle" name="wheelangle" placeholder = "angle roue direction" type = "text"></input>
@@ -13,7 +13,7 @@
         <label>déplacement</label>
         <input id="move" name="move" placeholder = "déplacement" type = "text"></input>
         <br/>
-        <input id="btn" name="submit" type="submit" value="Go" style="width:100%">
+        <input id="btn" name="submit" type="submit" value="Go" style="width:100%;">
     </form>
 </body>
 </html>
