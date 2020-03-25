@@ -2,8 +2,6 @@ import RPi.GPIO as GPIO
 from picamera import PiCamera
 import time
 
-print("import ok")
-
 # setup
 
 ## camera setup
@@ -120,15 +118,15 @@ def moveTo(distance):
 #        steps = raw_input("How many steps backwards? ")
 #        backwards(int(delay) / 1000.0, int(steps))
 
-try:
-  while True:
-      desiredCamAngle = input("Angle cam ? From 0 to 180")
-      getToAngle(desiredCamAngle)
-      takePicture('./pictures/image.jpg')
-      desiredDirection = input("Direction ? From -90 to 90")
-      getToDirection(desiredDirection)
-      desiredMove = input("Move distance ? From -20 to 100")
-      moveTo(desiredMove)
-except KeyboardInterrupt:
-  pcam.stop()
-  GPIO.cleanup()
+#try:
+  #while True:
+      #desiredCamAngle = input("Angle cam ? From 0 to 180")
+      #getToAngle(desiredCamAngle)
+      #takePicture('./pictures/image.jpg')
+      #desiredDirection = input("Direction ? From -90 to 90")
+      #getToDirection(desiredDirection)
+      #desiredMove = input("Move distance ? From -20 to 100")
+      #moveTo(desiredMove)
+#except KeyboardInterrupt:
+  #pcam.stop()
+  #GPIO.cleanup()
