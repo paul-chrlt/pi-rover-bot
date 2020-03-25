@@ -5,6 +5,8 @@ app = Flask(__name__)
 app.secret_key = 'uieorwhcjdqwouiersdhdfsjk'
 @app.route('/', methods = ['GET','POST'])
 
+takePicture('./static/currentView.jpg')
+
 def controlRequest():
     if request.method == 'POST':
         camangle = request.form['camangle']
