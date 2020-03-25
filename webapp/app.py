@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash
-import roverdriver.py
+execfile("roverdriver.py")
 
 takePicture('./static/currentView.jpg')
 
