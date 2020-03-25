@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, flash
 import roverdriver.py
 
+takePicture('./static/currentView.jpg')
+
 app = Flask(__name__)
 app.secret_key = 'uieorwhcjdqwouiersdhdfsjk'
 @app.route('/', methods = ['GET','POST'])
-
-takePicture('./static/currentView.jpg')
 
 def controlRequest():
     if request.method == 'POST':
