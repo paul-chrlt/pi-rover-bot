@@ -42,13 +42,21 @@ p{
 {
     body{
         font-size: 400%;
+        margin:0;
     }
     .dashboard{
         width:100%;
         max-width:100%;
         border-width:0;
+        margin:0;
+    }
+    p{
+        text-align:center;
+        margin:0;
+        padding:2rem;
     }
     img{
+        max-width:90%;
         margin:0;
     }
     input {
