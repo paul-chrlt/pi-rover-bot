@@ -15,7 +15,9 @@ def controlRequest():
         getToAngle(camangle)
         takePicture('./static/currentView.jpg')
         wheelangle = request.form['wheelangle']
+        getToDirection(wheelangle)
         move = request.form['move']
+        moveTo(move)
         message = "angle caméra de " + camangle
         flash(message)
     return render_template('index.html',currentViewPlace = './static/currentView.jpg?'+str(random.getrandbits(111)))
