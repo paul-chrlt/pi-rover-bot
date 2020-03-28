@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from picamera import PiCamera
+from picamera import PiCamera, Color
 import time
 
 # setup
