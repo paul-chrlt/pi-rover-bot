@@ -69,7 +69,7 @@ def takePicture(fileName):
     camera.annotate_foreground = Color('yellow')
     camera.contrast = 100
     camera.iso = 800
-    camera.saturation = -20
+    camera.saturation = -80
     camera.annotate_text = "Pi rover view"
     time.sleep(2)
     camera.capture(fileName)
