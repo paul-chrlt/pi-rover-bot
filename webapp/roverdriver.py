@@ -62,7 +62,15 @@ pdirection.ChangeDutyCycle(0)
 print("init ok")
 
 def takePicture(fileName):
+    camera.resolution = (1920, 1080)
     camera.start_preview()
+    camera.image_effect = "film"
+    camera.annotate_background = Color('black')
+    camera.annotate_foreground = Color('yellow')
+    camera.contrast = 100
+    camera.iso = 800
+    camera.saturation = -20
+    camera.annotate_text = "Pi rover view"
     time.sleep(2)
     camera.capture(fileName)
     camera.stop_preview()
