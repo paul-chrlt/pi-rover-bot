@@ -12,14 +12,17 @@ app.secret_key = 'uieorwhcjdqwouiersdhdfsjk'
 def controlRequest():
     if request.method == 'POST':
         camangle = request.form['camangle']
-        getToAngle(camangle)
-        takePicture('./static/currentView.jpg')
+        if camangle != '':
+            getToAngle(camangle)
         wheelangle = request.form['wheelangle']
-        getToDirection(wheelangle)
+        if wheelangle != '':
+            getToDirection(wheelangle)
         move = request.form['move']
-        moveTo(move)
-        message = "angle caméra de " + camangle
-        flash(message)
+        if move != '':
+            moveTo(move)
+        takePicture('./static/currentView.jpg')
+#        message = "angle caméra de " + camangle
+#        flash(message)
     return render_template('index.html',currentViewPlace = './static/currentView.jpg?'+str(random.getrandbits(111)))
 
 if __name__ == '__main__':
