@@ -57,6 +57,7 @@ time.sleep(1)
 pdirection.start(2.5) # Initialization direction
 # turning motors off
 pcam.ChangeDutyCycle(6)
+time.sleep(2)
 pcam.ChangeDutyCycle(0)
 pdirection.ChangeDutyCycle(0)
 
