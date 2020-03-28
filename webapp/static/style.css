@@ -12,10 +12,12 @@ label {
 }
 input{
     width:20rem;
+    height:2rem;
     margin-bottom:1rem;
+    font-family:monospace;
 }
 img{
-    max-width:28rem;
+/*     max-width:28rem; */
     margin:1rem;
 }
 form{
@@ -26,6 +28,7 @@ form{
 .dashboard{
     max-width:30rem;
     border:solid;
+    border-width:1px;
     padding:2rem;
     display:flex;
     flex-direction:column;
@@ -33,4 +36,20 @@ form{
 }
 p{
     margin:1rem;
+}
+@media all and (max-device-width: 480px)
+{
+    body{
+        background:darkgray;
+        font-size: 400%;
+    }
+    .dashboard{
+        width:100%;
+        max-width:100%;
+        border-width:0;
+    }
+    input {
+        height:5rem;
+        font-size:3rem;
+    }
 }
