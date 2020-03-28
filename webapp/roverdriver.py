@@ -78,7 +78,7 @@ def takePicture(fileName):
 
 def getToAngle(angle):
     angle = int(angle)
-    angle = (angle/180)*8+2
+    angle = ((180-angle)/180)*8+2
     pcam.ChangeDutyCycle(angle)
     time.sleep(1)
     pcam.ChangeDutyCycle(0)
