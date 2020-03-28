@@ -1,19 +1,25 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
 <body>
     <h1>Mini Cam Rover</h1>
-    <img src="{{ currentViewPlace }}" style="max-width: 360px;">
-    <p style="max-width:400px;">Insérer les instructions et valider. Délai de quelques secondes pour la mise à jour.</p>
-    <form action="" method="post" style="max-width: 400px;">
-        <label>angle caméra</label>
-        <input id="camangle" name="camangle" placeholder = "angle caméra (0-180)" type = "text"></input>
-        <br/>
-        <label>angle roues</label>
-        <input id="wheelangle" name="wheelangle" placeholder = "angle roue direction" type = "text"></input>
-        <br/>
-        <label>déplacement</label>
-        <input id="move" name="move" placeholder = "déplacement" type = "text"></input>
-        <br/>
-        <input id="btn" name="submit" type="submit" value="Go" style="width:100%;">
-    </form>
+    <div class="dashboard">
+        <img src="{{ currentViewPlace }}" >
+        <p>Insérer les instructions et valider. Délai de quelques secondes pour la mise à jour.</p>
+        <form action="" method="post">
+            <label>angle caméra (0 - 180)</label>
+            <input id="camangle" name="camangle" type = "text"></input>
+            <br/>
+            <label>angle roue de direction (-90 - 90)</label>
+            <input id="wheelangle" name="wheelangle" type = "text"></input>
+            <br/>
+            <label>déplacement (-20 - 100)</label>
+            <input id="move" name="move" type = "text"></input>
+            <br/>
+            <input id="btn" name="submit" type="submit" value="Go">
+        </form>
+    </div>
 </body>
 </html>
