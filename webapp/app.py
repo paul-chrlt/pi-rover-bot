@@ -18,8 +18,8 @@ def controlRequest():
         getToDirection(wheelangle)
         move = request.form['move']
         moveTo(move)
-        message = "angle caméra de " + camangle
-        flash(message)
+        #message = "angle caméra de " + camangle
+        #flash(message)
     return render_template('index.html',currentViewPlace = './static/currentView.jpg?'+str(random.getrandbits(111)))
 
 if __name__ == '__main__':
