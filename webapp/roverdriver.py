@@ -109,7 +109,7 @@ def backwards(delay, steps):
 
 def moveTo(distance):
     delay = 10
-    steps = distance
+    steps = int(distance)
     if steps > 0:
         forward(int(delay) / 1000.0, int(steps))
     else:
