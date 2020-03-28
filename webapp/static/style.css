@@ -40,7 +40,6 @@ p{
 @media all and (max-device-width: 480px)
 {
     body{
-        background:darkgray;
         font-size: 400%;
     }
     .dashboard{
@@ -51,5 +50,6 @@ p{
     input {
         height:5rem;
         font-size:3rem;
+        width: 100%;
     }
 }
